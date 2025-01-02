@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fun Frontier Park</title>
+    <style>
+        body {
+            font-family: 'Lucidity Expand';
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #190a13;
+            color: white;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .logo span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .user {
+            background-color: #190a13;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .main-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="img/logo.jpg">
+                    <span>FUN FRONTIER PARK</span>
+                </div>
+                    <nav>
+                        <ul>
+                            <li><a href="customer/cust index.php" class="nav-link">Ticket</a></li>
+                            <li><a href="cart.html" class="nav-link">Cart</a></li>
+                            <li class="user" id="username"></li>
+                        </ul>
+                    </nav>                    
+            </div>
+        </div>
+    </header>
+    <script>
+        // Example function to check if the user is logged in
+        function isLoggedIn() {
+            // This is a placeholder for actual login check logic
+            // Replace with real login check, e.g., by checking cookies, local storage, or an API call
+            var username = document.getElementById('username').innerText;
+            return username && username !== "";
+        }
+    
+        // Function to set the username
+        function setUsername() {
+            var username = ""; 
+            document.getElementById('username').innerText = username;
+        }
+    
+        // Add event listeners to navigation links
+        function addNavigationListeners() {
+            var links = document.querySelectorAll('.nav-link');
+            links.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    if (!isLoggedIn()) {
+                        event.preventDefault(); 
+                        alert('You need to log in to access this page.'); // Display a message or redirect to login
+                    }
+                });
+            });
+        }
+    
+        // Call the functions when the page loads
+        window.onload = function() {
+            setUsername();
+            addNavigationListeners();
+        }
+    </script>    
+</body>
+</html>

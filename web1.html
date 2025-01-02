@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertubuhan Peladang Kawasan Cameron Highlands</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #4A807A;
+            color: white;
+        }
+
+        .navbar-logo img {
+            height: 50px;
+        }
+
+        .navbar-links a {
+            margin: 0 10px;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: white;
+            width: 250px;
+            height: 100%;
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 0;
+            color: #4A807A;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Header Section */
+        header {
+            position: relative;
+            height: 100vh;
+            background-image: url('ppkch.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        header .header-content {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        header .button {
+            background-color: white;
+            color: #4A807A;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px 20px;
+            background-color: #4A807A;
+            color: white;
+            text-align: center;
+        }
+
+        .icon-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .info-box {
+            text-align: center;
+        }
+
+        .info-box i {
+            font-size: 40px;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px 30px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+        }
+
+        /* Popup Modal */
+        #infoModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        #infoModal h3 {
+            color: #FFD700;
+        }
+
+        #infoModal button {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Zoomable Image */
+        .zoomable {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .zoomable.zoomed {
+            transform: scale(2);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* Activities Section */
+        #our-activities {
+            padding: 50px 20px;
+            background-color: #4A807A;
+            color: white;
+            text-align: center;
+        }
+
+        /* Product Section */
+        #product-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .product-header img {
+            height: 150px;
+        }yhn 
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4A807A;
+            color: white;
+        }
+		
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-logo" style="background-color: white;">
+        <a href="#home"><img src="logo.png" alt="Logo"></a>
+    </div>
+    <div class="navbar-links">
+        <a href="#about">ABOUT</a>
+        <a href="#team-section">KAKITANGAN</a>
+          <div class="dropdown">
+            <a class="dropbtn">GALERI</a>
+            <div class="dropdown-content">
+                <a href="http://localhost/ppkch_web/cust/budi_madani.html">BUDI MADANI</a>
+                <a href="http://localhost/ppkch_web/cust/maulid_rasul.html">MAULIDUR RASUL 2024</a>
+                <a href="http://localhost/ppkch_web/cust/maha.html">MAHA 2024</a>
+				<a href="http://localhost/ppkch_web/cust/zakat.html">PROGRAM PENYAMPAIAN ZAKAT DAN BACAAN YASIN 2024</a>
+            </div>
+        </div>
+		
+		 <div class="dropdown">
+            <a class="dropbtn">PRODUK</a>
+            <div class="dropdown-content">
+                <a href="http://localhost/ppkch_web/cust/product_ppkch.html">PRODUK PPKCH</a>
+                <a href="http://localhost/ppkch_web/cust/TCV.html">TEH CAMERON VALLEY</a>
+                <a href="http://localhost/ppkch_web/cust/pp.html">PRODUK PELADANG</a>
+				<a href="http://localhost/ppkch_web/cust/boh.html">BOH</a>
+                <a href="http://localhost/ppkch_web/cust/cc.html">CHOCOLATES</a>
+                <!--<a href="http://localhost/ppkch_web/cust/cafe.html">CAFE D' PELADANG PPKCH</a>-->
+            </div>
+        </div>
+
+        <a href="#contact">CONTACT</a>
+
+    </div>
+</div>
+
+
+<!-- Header Section -->
+<header id="home">
+    <div class="header-content">
+        <h1>PERTUBUHAN PELADANG KAWASAN CAMERON HIGHLANDS</h1>
+        <a href="https://pklik.lpp.gov.my/v1/public/home" class="button">P-KLIK</a>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" style="padding: 50px 20px; background-color: #2C5D50; color: white;">
+  <div style="text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #EAF7F1;">ABOUT OUR ORGANIZATION</h2>
+  </div>
+
+  <!-- Key Info Row -->
+  <div class="icon-row" style="margin-top: 30px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+    <div class="info-box" style="text-align: center; max-width: 200px; background-color: #3A7566; border-radius: 10px; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+      <i class="fa fa-id-card icon-style" style="font-size: 50px; color: #EAF7F1; margin-bottom: 10px;"></i>
+      <p class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">Nombor Pendaftaran</p>
+	  <p style="font-size: 1rem; font-weight: bold; color: #EAF7F1; margin-bottom: 10px;">PPK 0124</p>
+    </div>
+
+    <div class="info-box" style="text-align: center; max-width: 200px; background-color: #3A7566; border-radius: 10px; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+      <i class="fa fa-shield icon-style" style="font-size: 50px; color: #EAF7F1; margin-bottom: 10px;"></i>
+      <p class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">Kawasan Pengendalian</p>
+      <p style="font-size: 1rem; font-weight: bold; color: #EAF7F1; margin-bottom: 10px;">71,225 HA</p>
+    </div>
+
+    <div class="info-box" style="text-align: center; max-width: 200px; background-color: #3A7566; border-radius: 10px; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+      <i class="fa fa-users icon-style" style="font-size: 50px; color: #EAF7F1; margin-bottom: 10px;"></i>
+      <p class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">Bil. Ahli PPK</p>
+      <p style="font-size: 1rem; font-weight: bold; color: #EAF7F1; margin-bottom: 10px;">1,636 orang</p>
+    </div>
+  </div>
+
+  <!-- Information Cards -->
+  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; padding: 50px 0;">
+    <!-- Operating Districts Card -->
+    <div class="card" style="background-color: #3A7566; border-radius: 15px; padding: 20px 30px; box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); max-width: 300px; text-align: center;">
+      <i class="fa fa-map icon-style" style="font-size: 50px; color: #EAF7F1; margin-bottom: 10px;"></i>
+      <p style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">Mukim Pengendalian</p>
+      <div style="padding: 20px; background-color: #2C5D50; border-radius: 10px;">
+        <ul style="list-style: none; padding: 0; margin: 0; text-align: left; color: #EAF7F1;">
+          <li style="padding: 10px; font-size: 1rem; border-bottom: 1px solid #4B8573;">Mukim Ringlet</li>
+          <li style="padding: 10px; font-size: 1rem; border-bottom: 1px solid #4B8573;">Mukim Ulu Telom</li>
+          <li style="padding: 10px; font-size: 1rem;">Mukim Tanah Rata</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Units Card -->
+<div class="card" style="background-color: #3A7566; border-radius: 15px; padding: 20px 30px; box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); max-width: 300px; text-align: center;">
+  <i class="fa fa-map icon-style" style="font-size: 50px; color: #EAF7F1; margin-bottom: 10px;"></i>
+  <p style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">Unit Peladang</p>
+  <div style="padding: 20px; background-color: #2C5D50; border-radius: 10px;">
+    <ul style="list-style: none; padding: 0; margin: 0; text-align: left; color: #EAF7F1;">
+      <li onclick="showInfo('Ringlet', 'Ketua Unit: Nadri Bin Othman<br>Phone: 019-5599015')" style="padding: 10px; font-size: 1rem; border-bottom: 1px solid #4B8573;">Ringlet</li>
+      <li onclick="showInfo('Taman Sedia', 'Ketua Unit: Zulkefli Bin Zahari<br>Phone: 013-5003833')" style="padding: 10px; font-size: 1rem; border-bottom: 1px solid #4B8573;">Taman Sedia</li>
+      <li onclick="showInfo('Brinchang', 'Ketua Unit: Zukhairo Bin Rippin<br>Phone: 019-5056527')" style="padding: 10px; font-size: 1rem; border-bottom: 1px solid #4B8573;">Brinchang</li>
+      <li onclick="showInfo('Sg. Palas', 'Ketua Unit: Sabri Bin Saad<br>Phone: 012-5020521')" style="padding: 10px; font-size: 1rem; border-bottom: 1px solid #4B8573;">Sg. Palas</li>
+      <li onclick="showInfo('Terisu', 'Ketua Unit: Ismail Bin Garak<br>Phone: 010-9493215')" style="padding: 10px; font-size: 1rem; border-bottom: 1px solid #4B8573;">Terisu</li>
+      <li onclick="showInfo('Kg. Raja', 'Ketua Unit: Abd Aziz Bin Che Hamid<br>Phone: 017-5247219')" style="padding: 10px; font-size: 1rem;">Kg. Raja</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Popup Modal -->
+<div id="infoModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #2C5D50; color: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); z-index: 1000;">
+  <h3 id="modalTitle" style="font-size: 1.5rem; color: #FFD700; margin-bottom: 15px;">Popup Title</h3>
+  <p id="modalContent" style="font-size: 1rem; margin-bottom: 20px;">This is the content of the popup box.</p>
+  <button onclick="closeInfo()" style="background-color: #FFD700; color: #2C5D50; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+</div>
+
+<script>
+  function showInfo(title, content) {
+    document.getElementById('modalTitle').innerHTML = title;
+    document.getElementById('modalContent').innerHTML = content;
+    document.getElementById('infoModal').style.display = 'block';
+  }
+
+  function closeInfo() {
+    document.getElementById('infoModal').style.display = 'none';
+  }
+</script>
+
+  
+  <div>
+    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PPROJEK PPK CH</h3>
+    <img src="projek.png" alt="projek" class="zoomable" 
+         onclick="toggleZoom(this)" style="width:70%; max-width: 800px; height:auto; margin: 20px auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+  </div>
+  
+  <!-- perkhidmatan Section -->
+  <div style="margin-top: 30px;">
+    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PERKHIDMATAN PPK</h3>
+    <img src="perkhidmatan.png" alt="perkhidmatan" class="zoomable" 
+         onclick="toggleZoom(this)" style="width:70%; max-width: 800px; height:auto; margin: 20px auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+  </div>
+</section>
+
+  <script>
+    // Function to toggle zoom effect
+    function toggleZoom(image) {
+      image.classList.toggle('zoomed'); // Add/remove "zoomed" class
+    }
+
+    // Hover effect for overlay text
+    const imageContainer = document.querySelector('.image-container');
+    imageContainer.addEventListener('mouseenter', () => {
+      document.querySelector('.overlay').style.opacity = '1';
+    });
+    imageContainer.addEventListener('mouseleave', () => { 
+      document.querySelector('.overlay').style.opacity = '0';
+    });
+  </script>
+
+  <style>
+    /* Style for Zoomable Images */
+    .zoomable {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .zoomable.zoomed {
+      transform: scale(1.8); /* Slightly larger zoom */
+      z-index: 1000; /* Ensures it appears above other elements */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Adds a shadow for better visibility */
+      position: relative; /* Prevents layout shifting */
+    }
+
+    /* Image Container Styling */
+    .image-container {
+      position: relative;
+      max-width: 100%;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    /* Overlay Text Styling */
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      opacity: 0; /* Hidden initially */
+      transition: opacity 0.3s ease;
+    }
+
+    /* Image Styling */
+    img {
+      display: block; /* Center the image */
+      margin: 0 auto; /* Centers the image horizontally */
+      width: 100%; /* Full width */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow around the image */
+    }
+
+    /* Container Styling */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  </style>
+</section>
+
+
+
+
+
+<!-- Team Section -->
+  <section id="team-section" style="padding: 50px 20px; text-align: center; background-color: #2C5D50;">
+  <div style="margin-top: 30px;"
+  <!-- AJP Section -->
+  <div style="margin-top: 30px;">
+    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">AHLI JEMAAH PENGARAH (AJP) PPK CAMERON HIGHLANDS</h3>
+    <img src="carta ajp.png" alt="AJP Chart" class="zoomable" 
+         onclick="toggleZoom(this)" style="width:70%; max-width: 800px; height:auto; margin: 20px auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+  </div>
+
+  <!-- Management Section -->
+  <div style="margin-top: 50px;">
+    <h3 class="info-title" style="font-size: 1.2rem; font-weight: bold; color: #EAF7F1; margin-bottom: 15px;">PENGURUSAN PPK CAMERON HIGHLANDS</h3>
+    <img src="carta pengurusan.png" alt="Management Chart" class="zoomable" 
+         onclick="toggleZoom(this)" style="width:70%; max-width: 800px; height:auto; margin: 20px auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+  </div>
+</section>
+
+<style>
+  /* General Section Styling */
+  #team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  #team-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  #team-section p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  /* Styling for Zoomable Images */
+  .zoomable {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .zoomable:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hover effect */
+  }
+
+  .zoomable.zoomed {
+    transform: scale(2); /* Zoom effect */
+    z-index: 1000; /* Bring to front */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    position: relative; /* Prevent layout shifts */
+  }
+
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .zoomable {
+      width: 90%; /* Reduce size for smaller screens */
+    }
+    .zoomable.zoomed {
+      transform: scale(1.5); /* Adjust zoom for smaller screens */
+    }
+  }
+</style>
+
+<script>
+  // Function to toggle zoom
+  function toggleZoom(image) {
+    image.classList.toggle('zoomed'); // Toggles the "zoomed" class
+  }
+</script>
+
+
+<div>
+<!-- Map Image -->
+    <img src="maps.png" class="responsive-image" style="width:100%; margin-top:40px" alt="Map of location"></div>
+
+<!-- Contact Section -->
+<section id="contact" style="padding: 50px 20px; text-align: center; background-color: #2C5D50; color: white;">
+    <h2>CONTACT US</h2>
+
+<a href="mailto:ppkch0124@gmail.com?subject=Inquiry&body=Hello,%0A%0AI'd%20like%20more%20information%20about%20your%20products.%0A%0AThanks!" 
+   class="button light-btn" 
+   style="background-color: white; color: #4A807A; padding: 10px 20px; font-size: 16px; border: 2px solid #4A807A; text-decoration: none; border-radius: 5px; display: inline-block; text-align: center;">
+    Email Us
+</a>
+
+
+
+
+
+
+    <p style="margin-top: 20px;">Hubungi Kami di: <strong>ppkch0124@gmail.com</strong> | <strong>No.Tel : 05-4913187</strong> | <strong>No.Fax : 05-4911236</strong></p>
+  <div class="social-section large-icons" style="margin-bottom: 20px;">
+    <a href="https://www.facebook.com/p/Pertubuhan-Peladang-Kawasan-Cameron-Highlands-100091787980714/" target="_blank" style="margin: 0 10px;">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://www.tiktok.com/@ppkch.0124?_t=8qWe4ChXAe7&_r=1" target="_blank" style="margin: 0 10px;">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+    <a href="https://x.com/ppk_chighlands" target="_blank" style="margin: 0 10px;">
+      <i class="fa-brands fa-twitter"></i>
+    </a>
+	<a href="https://maps.app.goo.gl/yTJjL1dvavwSduSM6" target="_blank" style="margin: 0 10px;">
+    <i class="fa fa-map-marked-alt"></i>
+	</a>
+  </div>
+  <a href="#home" class="button light-btn" style="background-color: white; color: #4A807A; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px;">
+    <i class="fa fa-arrow-up margin-right"></i>Back to Top
+  </a>
+</section>
+
+
+<footer>
+    <p style="text-align: center;">&copy; 2024 Pertubuhan Peladang Kawasan Cameron Highlands</p>
+</footer>
+
+
+<script>
+    // Sidebar toggle
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
+    }
+
+    // Modal functionality
+    function showInfo(title, content) {
+        const modal = document.getElementById("infoModal");
+        document.getElementById("modalTitle").textContent = title;
+        document.getElementById("modalContent").innerHTML = content;
+        modal.style.display = "block";
+    }
+
+    function closeInfo() {
+        document.getElementById("infoModal").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

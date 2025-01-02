@@ -1,0 +1,789 @@
+/* Reset margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set basic typography */
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Navbar styling */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo img {
+  height: 60px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+.navbar-links a:hover {
+  color: #4CAF50;
+}
+
+/* Responsive sidebar */
+.sidebar {
+  display: none;
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar a:hover {
+  color: #4CAF50;
+}
+
+/* Header with full-height background */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-image: url("ppkch.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: white;
+  padding: 48px;
+}
+
+.header h1 {
+  background-color: rgba(76, 175, 80, 0.8);
+  padding: 10px;
+  font-size: 2.5rem;
+}
+
+/* Sections Styling */
+.section {
+  padding: 128px 16px;
+}
+
+.section-light {
+  background-color: #f9f9f9;
+}
+
+.section-dark {
+  background-color: #478778;
+  color: white;
+}
+
+/* Team Section */
+.team-member {
+  margin-bottom: 32px;
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Product Cards */
+.product-card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100px;
+  height: 150px;
+  margin-bottom: 16px;
+}
+
+/* Buttons */
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* Container to arrange boxes in a row with spacing */
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Space between boxes */
+  padding-top: 80px;
+}
+
+/* Style for individual info boxes */
+.info-box {
+  background-color: #ffffff; /* Box background color */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Space inside the box */
+  width: 200px; /* Fixed width for consistent layout */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Center align content */
+}
+
+/* Icon styling */
+.icon-style {
+  font-size: 2em; /* Large icon size */
+  color: #478778; /* Icon color */
+  margin-bottom: 10px; /* Space below icon */
+}
+
+/* Info title styling */
+.info-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333; /* Dark text color */
+  margin: 10px 0 5px; /* Space above and below */
+}
+
+/* General paragraph styling inside info boxes */
+.info-box p {
+  margin: 5px 0;
+  color: #666; /* Light gray text color for description */
+}
+
+
+/* Style for the section containing the text */
+.about-section {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 40px; /* Adjust height as needed */
+  background-color: #4f7b7d; /* Match background color */
+}
+
+/* Style for the heading */
+.about-section h2 {
+  color: #ffffff;
+  font-size: 2em; /* Adjust font size */
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+}
+
+.team-section {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.team-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.team-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-column {
+  flex: 1 1 21%; /* Adjusts based on screen size */
+  max-width: 250px;
+}
+
+.team-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+}
+
+.team-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-info h4 {
+  font-size: 1.2rem;
+  margin: 15px 0 5px;
+  color: #333333;
+}
+
+.team-role {
+  font-size: 0.9rem;
+  color: #888888;
+  margin-bottom: 0;
+}
+
+/* Container and layout adjustments */
+  .container-section {
+    text-align: center;
+  }
+  .center-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .row-padding {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  .column-25 {
+    flex: 0 0 23%;
+    max-width: 23%;
+    box-sizing: border-box;
+  }
+
+  /* Image box styling */
+  .image-box {
+    background: #e8e8e8;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .image-box:hover {
+    transform: scale(1.05);
+  }
+
+  /* Image styling */
+  .activity-photo {
+    width: 100%;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+  }
+  .activity-photo:hover {
+    opacity: 0.9;
+  }
+
+  /* Modal styling */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .close-button:hover, .close-button:focus {
+    color: #bbb;
+    cursor: pointer;
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  .animate-zoom {
+    animation: zoom 0.6s;
+  }
+  .image-caption {
+    color: #ccc;
+    font-size: 18px;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* Zoom animation */
+  @keyframes zoom {
+    from { transform: scale(0) }
+    to { transform: scale(1) }
+  }
+  
+ <!--Product-->
+  /* Section Styling */
+  .product-section {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+
+  .section-description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+
+  /* Container Styling */
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  /* Product Card Styling */
+  .product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    width: 280px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-card:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .product-header {
+    background-color: #C1E1C1;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .product-image {
+    width: 80px;
+    height: 120px;
+    margin-right: 10px;
+  }
+
+  /* Product Details */
+  .product-details {
+    padding: 16px;
+    font-size: 0.9em;
+    color: #333;
+    width: 100%;
+  }
+
+  /* Buy Button Styling */
+  .product-footer {
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 16px;
+  }
+
+  .buy-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .buy-button:hover {
+    background-color: #333;
+  }
+  
+  .centered-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+/* Target the modal box */
+.modal-box {
+  background-color: black;
+  color: white; /* Ensures text is readable on a black background */
+  border: none; /* Optional: Removes any border for a cleaner look */
+  padding: 20px; /* Optional: Adjust spacing inside the box */
+  border-radius: 8px; /* Optional: Makes corners rounded */
+}
+
+/* Adjust the button for better contrast */
+.modal-box button {
+  background-color: white; /* Optional: Makes the button stand out */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Add hover effect for button (optional) */
+.modal-box button:hover {
+  background-color: grey;
+  color: white;
+}
+
+
+    /* Frame Container Styling */
+    .frame-container {
+      padding: 30px;
+      background-color: white; /* Frame background */
+      border: 5px solid #4A807A; /* Bold green frame border */
+      border-radius: 20px; /* Rounded corners */
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+      text-align: center; /* Centers the content inside */
+    }
+
+    /* Image Styling */
+    .zoomable {
+      width: 100%; /* Ensures the image adapts to frame width */
+      max-width: 800px; /* Restricts the maximum size */
+      height: auto; /* Maintains the aspect ratio */
+      border-radius: 10px; /* Smoothly rounds the image edges */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Zoom Effect Styling */
+    .zoomable.zoomed {
+      transform: scale(1.5); /* Enlarges the image when clicked */
+      z-index: 10; /* Brings the image to the front */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Adds a stronger shadow */
+      position: relative;
+    }
+
+    /* Optional Title/Caption Styling */
+    .caption {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #4A807A;
+    }
+  </style>
+  
+   .mind-map {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    /* Styling for the central node */
+    .node {
+      position: relative;
+      background-color: #4A807A; /* Green color for nodes */
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .node:hover {
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
+
+    /* Branch connectors */
+    .connector {
+      position: absolute;
+      background-color: #4A807A;
+      height: 2px;
+      z-index: -1;
+    }
+
+    /* Styling for branches */
+    .branch {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Position nodes around the central node */
+    .branch-1 { top: -150px; left: 0; transform: translateX(-50%); }
+    .branch-2 { top: 150px; left: 0; transform: translateX(-50%); }
+    .branch-3 { top: 0; left: -300px; transform: translateY(-50%); }
+    .branch-4 { top: 0; left: 300px; transform: translateY(-50%); }
+
+    /* Position connectors */
+    .connector-1 { width: 2px; height: 75px; top: -75px; left: 50%; }
+    .connector-2 { width: 2px; height: 75px; top: 75px; left: 50%; transform: translateY(50%); }
+    .connector-3 { width: 150px; height: 2px; top: 50%; left: -150px; transform: translateY(-50%); }
+    .connector-4 { width: 150px; height: 2px; top: 50%; left: 150px; transform: translateY(-50%); }
+  </style>
+  
+  
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:  #4A807A;
+    color: white;
+}
+
+/* Logo Styling */
+.navbar-logo img {
+    height: 50px; /* Adjust size of the logo */
+}
+
+/* Main Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button for Main Dropdown (HOME) */
+.dropbtn {
+    background-color:  #4A807A;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Main Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #4A807A;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Links inside the Main Dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Links Hover Effect */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show Main Dropdown when hovering */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Nested Dropdown (Activities) */
+.dropdown > .dropdown-content > .dropdown {
+    position: relative;
+}
+
+/* Nested Dropdown Button (ACTIVITIES) */
+.dropdown > .dropdown-content > .dropbtn {
+    background-color:  #4A807A;
+    color: black;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+/* Nested Dropdown Content */
+.dropdown > .dropdown-content > .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Show Nested Dropdown on hover */
+.dropdown > .dropdown-content > .dropdown:hover > .dropdown-content {
+    display: block;
+}
+
+/* Nested Links Hover Effect */
+.dropdown > .dropdown-content > .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color:  #4A807A;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown initially */
+    position: absolute;
+    background-color: #4A807A;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of links when hovered */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Ensure dropdown shows when hovering over it */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:  #4A807A;
+    color: white;
+}
+
+/* Logo Styling */
+.navbar-logo img {
+    height: 50px; /* Adjust size of the logo */
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button to open dropdown */
+.dropbtn {
+    background-color:  #4A807A;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content (hidden initially) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #4A807A;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of links when hovered */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown when hovering over it */
+.dropdown:hover .dropdown-content {
+    display: block;
+	
+	.buy-button {
+    padding: 10px 20px;
+    background-color: #25D366; /* WhatsApp green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.buy-button a {
+    color: white; /* Make sure the link text stays white */
+    text-decoration: none;
+}
+
+.buy-button:hover {
+    background-color: #128C7E; /* Darker green for hover effect */
+}
+
+.whatsapp-contact-button {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+}
+
